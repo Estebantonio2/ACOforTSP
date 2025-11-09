@@ -1,0 +1,28 @@
+=== CASO 2 ===
+Número de ciudades: 20
+Parametros ACO:
+  Hormigas: 10
+  Iteraciones: 60
+  Alpha: 1
+  Beta: 5
+  Tasa de evaporacion: 0.5
+  Q: 100
+  Paciencia: 7
+
+Iteracion   1 | Mejor global: 48.277 | Promedio: 58.259 | Feromonas promedio (mejor ruta): 9.7291
+Iteracion   2 | Mejor global: 48.277 | Promedio: 53.848 | Feromonas promedio (mejor ruta): 14.8080
+Iteracion   3 | Mejor global: 47.773 | Promedio: 55.263 | Feromonas promedio (mejor ruta): 20.5838
+Iteracion   4 | Mejor global: 45.376 | Promedio: 50.240 | Feromonas promedio (mejor ruta): 24.6165
+Iteracion   5 | Mejor global: 44.887 | Promedio: 49.130 | Feromonas promedio (mejor ruta): 28.4404
+Iteracion   6 | Mejor global: 44.679 | Promedio: 51.776 | Feromonas promedio (mejor ruta): 28.8068
+Iteracion   7 | Mejor global: 44.679 | Promedio: 49.511 | Feromonas promedio (mejor ruta): 29.8543
+Iteracion   8 | Mejor global: 44.679 | Promedio: 51.941 | Feromonas promedio (mejor ruta): 30.0084
+Iteracion   9 | Mejor global: 44.679 | Promedio: 54.246 | Feromonas promedio (mejor ruta): 29.3276
+Iteracion  10 | Mejor global: 44.679 | Promedio: 52.004 | Feromonas promedio (mejor ruta): 29.8233
+Iteracion  11 | Mejor global: 44.679 | Promedio: 50.543 | Feromonas promedio (mejor ruta): 29.6855
+Iteracion  12 | Mejor global: 44.679 | Promedio: 49.786 | Feromonas promedio (mejor ruta): 29.8967
+Iteracion  13 | Mejor global: 44.679 | Promedio: 49.605 | Feromonas promedio (mejor ruta): 31.3391
+
+Convergencia alcanzada en iteracion 13 (sin mejora por 7 iteraciones)
+
+Mejor longitud final: 44.6791

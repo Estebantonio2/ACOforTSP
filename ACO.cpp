@@ -22,7 +22,7 @@ pair<vector<int>, double> ant_colony_optimization(
     double Q,
     int patience
 ) {
-    // --- Imprimir parametros ---
+    // --- Imprimir parámetros iniciales ---
     cout << "Parametros ACO:\n"
          << "  Hormigas: " << n_ants << "\n"
          << "  Iteraciones: " << n_iterations << "\n"
@@ -61,7 +61,7 @@ pair<vector<int>, double> ant_colony_optimization(
         vector<vector<int>> paths;
         vector<double> lengths;
 
-        // --- Recorremos todas las hormigas ---
+        // --- Cada hormiga construye una ruta ---
         for (int ant = 0; ant < n_ants; ++ant) {
             vector<bool> visited(n_cities, false);
             int current = gen() % n_cities;
@@ -114,6 +114,11 @@ pair<vector<int>, double> ant_colony_optimization(
             }
         }
 
+        // --- Estadísticas ---
+        double avg_len = 0.0;
+        for (double L : lengths) avg_len += L;
+        avg_len /= n_ants;
+
         // --- Evaporación de feromonas ---
         for (int i = 0; i < n_cities; ++i)
             for (int j = 0; j < n_cities; ++j)
@@ -131,9 +136,21 @@ pair<vector<int>, double> ant_colony_optimization(
             }
         }
 
+        // --- Calcular promedio de feromonas en la mejor ruta ---
+        double sum_best_pher = 0.0;
+        for (int i = 0; i < (int)best_path.size(); ++i) {
+            int a = best_path[i];
+            int b = best_path[(i + 1) % n_cities];
+            sum_best_pher += pher[a][b];
+        }
+        double avg_best_pher = sum_best_pher / best_path.size();
+
+        // --- Mostrar solo las 3 métricas ---
         cout << "Iteracion " << setw(3) << iter + 1
-             << " | Mejor longitud: " << fixed << setprecision(3)
-             << best_len << endl;
+             << " | Mejor global: " << fixed << setprecision(3) << best_len
+             << " | Promedio: " << avg_len
+             << " | Feromonas promedio (mejor ruta): " << setprecision(4) << avg_best_pher
+             << endl;
 
         // --- EARLY STOPPING ---
         if (best_len < last_best - 1e-6) {
