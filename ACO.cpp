@@ -18,7 +18,7 @@ pair<vector<int>, double> ant_colony_optimization(
     int n_iterations,
     double alpha,
     double beta,
-    double evaporation_rate,
+    double rho,
     double Q,
     int patience
 ) {
@@ -28,7 +28,7 @@ pair<vector<int>, double> ant_colony_optimization(
          << "  Iteraciones: " << n_iterations << "\n"
          << "  Alpha: " << alpha << "\n"
          << "  Beta: " << beta << "\n"
-         << "  Tasa de evaporacion: " << evaporation_rate << "\n"
+         << "  Tasa de evaporacion: " << rho << "\n"
          << "  Q: " << Q << "\n"
          << "  Paciencia: " << patience << "\n\n";
 
@@ -132,7 +132,7 @@ pair<vector<int>, double> ant_colony_optimization(
         // Fórmula: τ(i,j) ← (1-ρ) × τ(i,j)
         for (int i = 0; i < n_cities; ++i)
             for (int j = 0; j < n_cities; ++j)
-                pher[i][j] *= (1.0 - evaporation_rate);
+                pher[i][j] *= (1.0 - rho);
 
         // --- Depositar feromonas ---
         // Cada hormiga deposita feromona en su ruta: Δτ = Q/L
