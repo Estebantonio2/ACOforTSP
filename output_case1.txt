@@ -5,9 +5,9 @@ Parametros ACO:
   Iteraciones: 30
   Alpha: 1
   Beta: 3
-  Tasa de evaporacion: 0.5
+  Rho: 0.5
   Q: 100
-  Paciencia: 5
+  k: 3
 
 Iteracion   1 | Mejor global: 25.836 | Promedio: 31.152 | Feromonas promedio (mejor ruta): 12.0601
 Iteracion   2 | Mejor global: 23.585 | Promedio: 26.649 | Feromonas promedio (mejor ruta): 19.4289
@@ -16,9 +16,7 @@ Iteracion   4 | Mejor global: 22.674 | Promedio: 24.903 | Feromonas promedio (me
 Iteracion   5 | Mejor global: 22.674 | Promedio: 23.489 | Feromonas promedio (mejor ruta): 33.9609
 Iteracion   6 | Mejor global: 22.674 | Promedio: 25.049 | Feromonas promedio (mejor ruta): 35.0899
 Iteracion   7 | Mejor global: 22.674 | Promedio: 24.121 | Feromonas promedio (mejor ruta): 35.9506
-Iteracion   8 | Mejor global: 22.674 | Promedio: 28.318 | Feromonas promedio (mejor ruta): 31.3012
-Iteracion   9 | Mejor global: 22.674 | Promedio: 28.066 | Feromonas promedio (mejor ruta): 29.1974
 
-Convergencia alcanzada en iteracion 9 (sin mejora por 5 iteraciones)
+Convergencia alcanzada en iteracion 7 (sin mejora por 3 iteraciones)
 
 Mejor longitud final: 22.6737

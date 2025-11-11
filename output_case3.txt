@@ -5,9 +5,9 @@ Parametros ACO:
   Iteraciones: 80
   Alpha: 1
   Beta: 7
-  Tasa de evaporacion: 0.4
+  Rho: 0.4
   Q: 200
-  Paciencia: 10
+  k: 5
 
 Iteracion   1 | Mejor global: 103.849 | Promedio: 112.076 | Feromonas promedio (mejor ruta): 17.1652
 Iteracion   2 | Mejor global: 95.853 | Promedio: 109.069 | Feromonas promedio (mejor ruta): 27.6649
@@ -19,20 +19,7 @@ Iteracion   7 | Mejor global: 94.732 | Promedio: 110.364 | Feromonas promedio (m
 Iteracion   8 | Mejor global: 94.732 | Promedio: 109.936 | Feromonas promedio (mejor ruta): 45.0251
 Iteracion   9 | Mejor global: 94.732 | Promedio: 109.710 | Feromonas promedio (mejor ruta): 44.7697
 Iteracion  10 | Mejor global: 94.732 | Promedio: 106.124 | Feromonas promedio (mejor ruta): 46.0444
-Iteracion  11 | Mejor global: 94.732 | Promedio: 108.617 | Feromonas promedio (mejor ruta): 46.9729
-Iteracion  12 | Mejor global: 94.732 | Promedio: 110.819 | Feromonas promedio (mejor ruta): 46.5706
-Iteracion  13 | Mejor global: 91.921 | Promedio: 108.070 | Feromonas promedio (mejor ruta): 47.6765
-Iteracion  14 | Mejor global: 91.921 | Promedio: 106.060 | Feromonas promedio (mejor ruta): 47.9634
-Iteracion  15 | Mejor global: 91.921 | Promedio: 107.431 | Feromonas promedio (mejor ruta): 48.5395
-Iteracion  16 | Mejor global: 91.921 | Promedio: 106.389 | Feromonas promedio (mejor ruta): 49.2176
-Iteracion  17 | Mejor global: 91.921 | Promedio: 106.127 | Feromonas promedio (mejor ruta): 50.0940
-Iteracion  18 | Mejor global: 91.921 | Promedio: 105.914 | Feromonas promedio (mejor ruta): 50.1225
-Iteracion  19 | Mejor global: 91.921 | Promedio: 107.421 | Feromonas promedio (mejor ruta): 48.4734
-Iteracion  20 | Mejor global: 91.921 | Promedio: 105.931 | Feromonas promedio (mejor ruta): 49.3808
-Iteracion  21 | Mejor global: 91.921 | Promedio: 107.482 | Feromonas promedio (mejor ruta): 48.9871
-Iteracion  22 | Mejor global: 91.921 | Promedio: 105.778 | Feromonas promedio (mejor ruta): 48.6538
-Iteracion  23 | Mejor global: 91.921 | Promedio: 107.118 | Feromonas promedio (mejor ruta): 48.5619
 
-Convergencia alcanzada en iteracion 23 (sin mejora por 10 iteraciones)
+Convergencia alcanzada en iteracion 10 (sin mejora por 5 iteraciones)
 
-Mejor longitud final: 91.9210
+Mejor longitud final: 94.7322
