@@ -18,9 +18,9 @@ pair<vector<int>, double> ant_colony_optimization(
     int n_iterations,
     double alpha,
     double beta,
-    double evaporation_rate,
+    double rho,
     double Q,
-    int patience
+    int k
 ) {
     // --- Imprimir parámetros iniciales ---
     cout << "Parametros ACO:\n"
@@ -28,9 +28,9 @@ pair<vector<int>, double> ant_colony_optimization(
          << "  Iteraciones: " << n_iterations << "\n"
          << "  Alpha: " << alpha << "\n"
          << "  Beta: " << beta << "\n"
-         << "  Tasa de evaporacion: " << evaporation_rate << "\n"
+         << "  Rho: " << rho << "\n"
          << "  Q: " << Q << "\n"
-         << "  Paciencia: " << patience << "\n\n";
+         << "  k: " << k << "\n\n";
 
     int n_cities = cities.size(); // Número total de ciudades en el problema TSP
 
@@ -150,14 +150,14 @@ pair<vector<int>, double> ant_colony_optimization(
         // Reduce gradualmente todas las feromonas para olvidar soluciones antiguas
         for (int i = 0; i < n_cities; ++i)
             for (int j = 0; j < n_cities; ++j)
-                pher[i][j] *= (1.0 - evaporation_rate);
+                pher[i][j] *= (1.0 - rho);
 
         // --- Depositar feromonas ---
         // Cada hormiga deposita feromona en su ruta: Δτ = Q/L
         // Rutas más cortas depositan más feromona (refuerzo positivo)
-        for (size_t k = 0; k < paths.size(); ++k) {
-            double deposit = Q / lengths[k]; // Cantidad inversamente proporcional a la longitud
-            const auto& path = paths[k];
+        for (size_t l = 0; l < paths.size(); ++l) {
+            double deposit = Q / lengths[l]; // Cantidad inversamente proporcional a la longitud
+            const auto& path = paths[l];
             for (int i = 0; i < n_cities; ++i) {
                 int a = path[i];
                 int b = path[(i + 1) % n_cities];
@@ -193,9 +193,9 @@ pair<vector<int>, double> ant_colony_optimization(
         }
 
         // Si no hay mejora por 'patience' iteraciones consecutivas, detener
-        if (no_improve >= patience) {
+        if (no_improve >= k) {
             cout << "\nConvergencia alcanzada en iteracion " << iter + 1
-                 << " (sin mejora por " << patience << " iteraciones)\n";
+                 << " (sin mejora por " << k << " iteraciones)\n";
             break;
         }
     }

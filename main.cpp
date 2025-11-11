@@ -56,10 +56,10 @@ int main(int argc, char* argv[]) {
     // --- Parámetros por caso ---
     int n_ants;          // Número de hormigas que explorarán en paralelo
     int n_iterations;    // Número máximo de iteraciones del algoritmo
-    int patience;        // Iteraciones sin mejora antes de detener (early stopping)
+    int k;        // Iteraciones sin mejora antes de detener (early stopping)
     double alpha;        // Exponente de importancia de la feromona (τ^α)
     double beta;         // Exponente de importancia de la heurística (η^β)
-    double evaporation;  // Tasa de evaporación de feromonas (ρ)
+    double rho;  // Tasa de evaporación de feromonas (ρ)
     double Q;            // Constante para calcular depósito de feromonas (Q/L)
 
     if (case_id == 1) {
@@ -68,9 +68,9 @@ int main(int argc, char* argv[]) {
         n_iterations = 30;
         alpha = 1.0;
         beta = 3.0;
-        evaporation = 0.5;
+        rho = 0.5;
         Q = 100.0;
-        patience = 5;
+        k = 3;
     }
     else if (case_id == 2) {
         // Caso mediano: más hormigas, más iteraciones, beta alto para preferir distancias cortas
@@ -78,9 +78,9 @@ int main(int argc, char* argv[]) {
         n_iterations = 60;
         alpha = 1.0;
         beta = 5.0;
-        evaporation = 0.5;
+        rho = 0.5;
         Q = 100.0;
-        patience = 7;
+        k = 4;
     }
     else { // caso 3
         // Caso grande con estructura: muchas hormigas, beta muy alto, mayor depósito de feromona
@@ -88,9 +88,9 @@ int main(int argc, char* argv[]) {
         n_iterations = 80;
         alpha = 1.0;
         beta = 7.0;          // Beta alto explota la estructura de clústeres
-        evaporation = 0.4;    // Menor evaporación para mantener más memoria
+        rho = 0.4;    // Menor evaporación para mantener más memoria
         Q = 200.0;            // Mayor Q para reforzar buenos caminos
-        patience = 10;
+        k = 5;
     }
 
     // Ejecutar el algoritmo de optimización de colonia de hormigas
@@ -101,9 +101,9 @@ int main(int argc, char* argv[]) {
         n_iterations,
         alpha,
         beta,
-        evaporation,
+        rho,
         Q,
-        patience
+        k
     );
 
     cout << "\nMejor longitud final: " << best_length << endl;
